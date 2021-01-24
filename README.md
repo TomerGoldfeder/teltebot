@@ -83,4 +83,4 @@ user_data = {
 }
 ```
 
-<img src="screenshot.jpg">
+<img src="screenshot.jpg" height = 100px>
