@@ -88,3 +88,21 @@ except:
     print(traceback.format_exc())
     bot.send_message(traceback.format_exc())
 
+
+#################################################################################
+# only notifications
+#################################################################################
+user_data['include_run_notification'] = True
+try:
+    model.fit(
+        x_train,
+        y_train,
+        batch_size=128,
+        epochs=3,
+        verbose=0,
+        validation_split=0.5,
+        callbacks=[TelegramNotifier(**user_data)],
+    )
+except:
+    print(traceback.format_exc())
+    bot.send_message(traceback.format_exc())
