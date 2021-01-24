@@ -82,3 +82,5 @@ user_data = {
     "include_images": True
 }
 ```
+
+<img src="screenshot.jpg">
