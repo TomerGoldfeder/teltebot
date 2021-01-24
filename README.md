@@ -24,7 +24,7 @@ $ pip install teltebot
 You can use the notifier as a "free agent" or as a Tensorflow callback function.
 
 To use the bot as a "free agent":
-```sh
+```python
 from TelegramNotifierBot import TelegramBot
 import traceback
 
@@ -43,7 +43,7 @@ except:
 ```
 
 Use as a Tensorflow callback function:
-```sh
+```python
 import tensorflow as tf
 from TelegramCallback import TelegramNotifier
 from TelegramNotifierBot import TelegramBot
@@ -73,7 +73,7 @@ except:
 ```
 You can include sending images at the end of the training and send metrics updates during training by adding to `user_data` setting the `include_images` argument and set it to `True`, and the `include_run_notification` to `True`:
 
-```
+```python
 user_data = {
     "bot": bot,
     "metrics": ['accuracy', 'mean_squared_error'],
