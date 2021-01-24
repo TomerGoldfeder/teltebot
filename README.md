@@ -39,7 +39,7 @@ try:
 
     bot.send_message("Test Message")
 except:
-    bot.send_message(traceback.format_exc()
+    bot.send_message(traceback.format_exc())
 ```
 
 Use as a Tensorflow callback function:
@@ -68,7 +68,7 @@ try:
             callbacks=[TelegramNotifier(**user_data)],
         )
 except:
-    bot.send_message(traceback.format_exc()
+    bot.send_message(traceback.format_exc())
 
 ```
 You can include sending images at the end of the training and send metrics updates during training by adding to `user_data` setting the `include_images` argument and set it to `True`, and the `include_run_notification` to `True`:
