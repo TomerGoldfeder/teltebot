@@ -23,10 +23,11 @@ class TelegramNotifier(tf.keras.callbacks.Callback):
 
     def on_epoch_end(self, epoch, logs=None):
         if self.include_run_notification:
-            message = "Epoch {} - Acc: {:.4f}, Loss: {:.4f}".format(epoch, logs['accuracy'], logs['loss'])
+            message = "Epoch {} - Acc: {:.4f}, Loss: {:.4f}".format(epoch, logs['accuracy'] if 'accuracy' in logs else logs['acc'], logs['loss'])
             self.bot.send_message(message)
         for metric in self.metrics:
-            self.metrics[metric].append(logs[metric])
+            if metric in logs:
+                self.metrics[metric].append(logs[metric])
 
     def send_images(self, images):
         if not self.include_images:
